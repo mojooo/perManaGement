@@ -6,9 +6,6 @@ import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
 
 public class login extends AbstractInterceptor {
 
-    /**
-     * 同步
-     */
     private static final long serialVersionUID = 1L;
 
     @Override
