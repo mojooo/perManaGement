@@ -7,7 +7,7 @@ import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
 public class login extends AbstractInterceptor {
 
     /**
-     * test1234
+     * 同步
      */
     private static final long serialVersionUID = 1L;
 
