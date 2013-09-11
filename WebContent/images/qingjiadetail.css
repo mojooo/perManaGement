@@ -1,0 +1,21 @@
+#container{
+	width:700px;margin:0 auto;text-align: left;background-color:white;height:500px;
+}
+table{
+	width:100%;text-align:center;border:1;background:#f2fdf2; cellspacing:0;cellpadding:0px;margin-top:30px;font-size:14px;color:black;
+}
+caption{
+	display:block;background:#f2fdf2;color:#007b00;font-size:16px;
+}
+td{
+	background:white;
+}
+legend{
+	font-size:14px;color:#007b00
+}
+fieldset p{
+	font-size:14px;color:#404040;padding-top:0;margin-top:3px;text-indent:1.5em;
+}
+fieldset{
+	height:100px;
+}

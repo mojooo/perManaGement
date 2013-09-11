@@ -1,0 +1,35 @@
+#maincontent .choseinfo{
+	color:#404040;font-size:14px;
+}
+#maincontent .shengcheng{
+	width:80px;color:#007b00;font-weight:700px;height:20px;background:#f2fdf2;margin-top:2px;margin-left:2px;
+}
+.headerClass{
+ 	height: 25px;text-align: center;color:#404040;background: #c7e9ad;font-size:14px;
+ }
+.evenRow{
+ 	height: 23px;background:#e3fcff;text-align:center;font-size:14px;color:#404040
+ }
+
+ .oddRow{
+ 	height: 23px;background:#f4f4f4;text-align:center;font-size:14px;color:#404040
+ }
+ .selectedRow{
+ 	background:white;height: 23px;text-align:center;font-size:14px;
+ }
+table caption{
+ 	display:block;background:f2fdf2;color:#007b00;font-size:16px;
+}
+a{
+	text-decoration:none;color:#007b00;
+}
+a:hover{
+	color:red;
+}
+.tiaozhuan{
+ 	height:20px;color:#007b00;font-weight:700px;background:#f2fdf2;
+ }
+ 
+label{
+ 	font-size:14px;color:#404040;
+ }

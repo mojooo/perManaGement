@@ -1,0 +1,60 @@
+body {
+  	min-width: 680px;	
+}
+#container{
+	width:670px;margin:0 auto;margin-top:25px;text-align:left;background-color:white;
+}
+#headcontainer{
+	width:670px;height:50px;margin:0 atuo;
+}
+#headcontainer img{
+	width:50px;height:50px;
+}
+#headcontainer h2{
+	font-size:25px;color:#1669a6;margin-top:10px;position:absolute;
+}
+#headcontainer h4{
+	font-size:14px;color:#1669a6;margin-top:35px;font:Verdana, Helvetica, sans-serif;position:absolute;
+}
+#mainbody{
+	background-color:#edecec;margin-top:10px;height:100px;
+}
+#operate{
+	height:200px;position:relative;width:670px;
+}
+#operate p{
+	font-size:18px;text-align:center;margin:10px auto 0 auto;position:relative;color:#666666;
+}
+#operate .uid{
+	position:absolute;margin-left:200px;margin-top:12px;font-size:15px;color:#666666;
+}
+#operate .pwd{
+	position:absolute;margin-left:212px;margin-top:41px;font-size:15px;color:#666666;
+}
+#operate .yanzhengma{
+	position:absolute;margin-left:200px;margin-top:71px;font-size:15px;color:#666666;
+}
+#operate .inuid{
+	height:20px;position:absolute;margin-top:10px;margin-left:300px;width:160px;
+}
+#operate .inpwd{
+	height:20px;position:absolute;margin-top:39px;margin-left:300px;width:160px;
+}
+#operate .inyanzhengma{
+	height:20px;position:absolute;margin-top:68px;margin-left:300px;width:80px;
+}
+#operate .logins{
+	width:60px;position:absolute;margin-top:91px;margin-left:300px;
+}
+#operate img{
+	position:absolute;margin-top:68px;margin-left:400px;
+}
+#operate a{
+	position:absolute;margin-top:70px;margin-left:465px;color:#000;font-size:15px;text-decoration: none;
+}
+#operate a:hover{
+	color:red;text-decoration:underline;
+}
+.jd{
+	visibility:hidden;position:absolute;z-index:1;
+}

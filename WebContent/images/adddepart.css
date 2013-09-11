@@ -1,0 +1,18 @@
+#addcontain{
+	width:500px;margin-top:30px;margin-left:30px;text-align:center;
+}
+#addcontain table{
+	width:100%;
+}
+#addcontain table caption{
+	display:block;background:f2fdf2;color:#007b00;font-size:16px;
+}
+#addcontain table .info{
+	text-align:center;font-size:14px;color:#404040;
+}
+#addcontain table .infield{
+	text-align:left;font-size:14px;color:#404040;height:20px;
+}
+.tianjia{
+	height:20px;color:#007b00;font-weight:700px;background:#f2fdf2;width:50px;font-size:14px;
+}

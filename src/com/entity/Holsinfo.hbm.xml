@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-8-23 15:06:51 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.entity.Holsinfo" table="holsinfo" >
+        <id name="holsId" type="java.lang.Integer">
+            <column name="holsId" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="employeeinfo" class="com.entity.Employeeinfo" fetch="select">
+            <column name="empId" length="10" not-null="true">
+            </column>
+        </many-to-one>
+        <property name="applyTime" type="timestamp">
+            <column name="applyTime" length="0" not-null="true">
+            </column>
+        </property>
+        <property name="startTime" type="date">
+            <column name="startTime" length="0" not-null="true">
+            </column>
+        </property>
+        <property name="endTime" type="date">
+            <column name="endTime" length="0" not-null="true">
+            </column>
+        </property>
+        <property name="holdays" type="byte">
+            <column name="holdays" precision="2" scale="0" not-null="true">
+            </column>
+        </property>
+        <property name="executes" type="string">
+            <column name="executes" length="500" not-null="true">
+            </column>
+        </property>
+        <property name="holsState" type="int">
+            <column name="holsState"  not-null="true">
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

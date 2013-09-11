@@ -1,0 +1,39 @@
+*{
+	margin:0px;padding:0px;
+}
+
+body {
+    font:"ËÎÌו";
+}
+#leftTree ul{
+	list-style:none;
+	margin-left:0px;
+	margin-top:10px;
+}
+#leftTree li{
+	margin:9 0;
+}
+#leftTree li a{
+	display:block;
+	width:190px;
+	height:25px;
+	color:#007b00;
+	font-size:14px;
+	font-weight:600;
+	background:url(001.gif) no-repeat left top;
+	line-height:25px;
+	text-indent:40px;
+	text-decoration:none;
+}
+#leftTree li a:hover{
+	display:block;
+	width:190px;
+	height:25px;
+	color:red;
+	font-size:14px;
+	font-weight:600;
+	background:url(001.gif) no-repeat left top;
+	line-height:25px;
+	text-indent:40px;
+	text-decoration:none;
+}

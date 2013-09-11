@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="utf-8"></constant>
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="true" />
+
+	<package name="login" namespace="/" extends="struts-default">
+		<!-- 登陆action -->
+		<action name="LoginAction_*" class="LoginAction" method="{1}">
+			<result name="manage" type="redirect">empAction_findEmpPageList.action</result>
+			<result name="personal" type="redirect">empAction_empDet.action</result>
+			<result name="loginError">/Login.jsp</result>
+			<result name="logout">/Login.jsp</result>
+		</action>
+	</package>
+
+	<package name="student" namespace="/" extends="struts-default">
+		<interceptors>
+			<interceptor name="checkLogin" class="com.util.login" />
+			<interceptor-stack name="mydefault">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="checkLogin" />
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="mydefault" />
+
+		<global-results>
+			<result name="loginError">/Login.jsp</result>
+		</global-results>
+
+		<!-- 部门action -->
+		<action name="departAction_*" class="departAction" method="{1}">
+			<result name="addDepUI">/</result>
+			<result name="addDepOk" type="redirect">departAction_findDepPageList.action</result>
+			<result name="dellDepOk" type="redirect">departAction_findDepPageList.action</result>
+			<result name="updateDepUI">/EditDepart.jsp</result>
+			<result name="updateDepOk" type="redirect">departAction_findDepPageList.action</result>
+			<result name="findDepPageList">/DepartList.jsp</result>
+			<result name="Error">/</result>
+		</action>
+
+		<!-- 员工action -->
+		<action name="empAction_*" class="empAction" method="{1}">
+			<result name="addEmpUI">/AddEmp.jsp</result>
+			<result name="empDetail">/EmpDetail.jsp</result>
+			<result name="searchEmp">/SearchImp.jsp</result>
+			<result name="addEmpOk" type="redirect">empAction_findEmpPageList.action</result>
+			<result name="delEmpOk">/EmpList.jsp</result>
+			<result name="empDet">/Personal.jsp</result>
+			<result name="updateEmpUI">/EditEmp.jsp</result>
+			<result name="updateEmpOk">/SearchImp.jsp</result>
+			<result name="findEmpPageList">/EmpList.jsp</result>
+			<result name="searchEmpList">/SearchImp.jsp</result>
+			<result name="Error">/</result>
+		</action>
+
+		<!-- 加班action -->
+		<action name="extraworkAction_*" class="extraworkAction" method="{1}">
+			<result name="addExtUI" type="redirect">/</result>
+			<result name="extDetail">/ExtraWorkDetail.jsp</result>
+			<result name="addExtOk">/DepartEW.jsp</result>
+			<result name="delExtOk">/DepartEW.jsp</result>
+			<result name="updateExtUI">/</result>
+			<result name="updateExtOk">/</result>
+			<result name="findOneExtPageList">/PersonEW.jsp</result>
+			<result name="findExtPageList">/DepartEW.jsp</result>
+			<result name="Error">/</result>
+		</action>
+
+		<!-- 工资action -->
+		<action name="salaryAction_*" class="salaryAction" method="{1}">
+			<result name="addSalUI">/</result>
+			<result name="addSalOk">/</result>
+			<result name="delSalOk">/</result>
+			<result name="updateSalUI">/</result>
+			<result name="updateSalOk" type="redirect">salaryAction_findMonthPageList.action</result>
+			<result name="salUIError">/ComSalary.jsp</result>
+			<result name="salUI" type="redirect">salaryAction_findMonthPageList.action</result>
+			<result name="findMonthPageList">/SalaryTable.jsp</result>
+			<result name="findSalList">/PSalaryList.jsp</result>
+			<result name="findSalPageList">/</result>
+			<result name="Error">/</result>
+		</action>
+
+		<!-- 请假条action -->
+		<action name="holsAction_*" class="holsAction" method="{1}">
+			<result name="addHolsUI">/apply.jsp</result>
+			<result name="addHolsOk" type="redirect">holsAction_findHolsPageList.action</result>
+			<result name="dellHolsOk" type="redirect">holsAction_findHolsPageList.action</result>
+			<result name="updateHolsUI">/</result>
+			<result name="updateHolsOk" type="redirect">holsAction_adminHols.action</result>
+			<result name="adminHols">/DualApply.jsp</result>
+			<result name="findHolsPageList">/appSearch.jsp</result>
+			<result name="Error">/</result>
+		</action>
+
+		<!-- 用户action -->
+		<action name="userAction_*" class="userAction" method="{1}">
+			<result name="addUserUI">/</result>
+			<result name="addUserOk">/</result>
+			<result name="delUserOk">/</result>
+			<result name="updateUserUI">/</result>
+			<result name="updateUserOk">/</result>
+			<result name="updatePwdOk" type="redirect">LoginAction_logout.action</result>
+			<result name="updatePwdError">/ChangePwd.jsp</result>
+			<result name="findUserPageList">/</result>
+			<result name="Error">/</result>
+		</action>
+
+		<!-- 考勤action -->
+		<action name="attendanceAction_*" class="attendanceAction" method="{1}">
+			<result name="addAtdUI">/QianDao.jsp</result>
+			<result name="addAtdOk" type="redirect">attendanceAction_addAtdUI.action</result>
+			<result name="delAtdOk">/</result>
+			<result name="updateAtdUI">/</result>
+			<result name="updateAtdOk" type="redirect">attendanceAction_addAtdUI.action</result>
+			<result name="dayAdtOpUIError">/QianDaoOption.jsp</result>
+			<result name="dayAdtOpUIOK" type="redirect">attendanceAction_addAtdUI.action</result>
+			<result name="findTodayAtdUI">/TodayAttend.jsp</result>
+			<result name="findTodayAtd">/TodayAttend.jsp</result>
+			<result name="findAtdList">/KaoQinSearch.jsp</result>
+			<result name="findConditionAtdList">/KaoQinSearch.jsp</result>
+			<result name="findAtdPageList">/PKaoQin.jsp</result>
+			<result name="ByTimePageList">/PKaoQin.jsp</result>
+			<result name="Error">/</result>
+		</action>
+
+	</package>
+	<!-- Add packages here -->
+
+</struts>

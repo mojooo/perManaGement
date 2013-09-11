@@ -1,0 +1,88 @@
+*{
+	margin:0px;padding:0px;
+}
+
+body {
+    font:"ËÎÌו";
+}
+#leftTree ul{
+	list-style:none;
+	margin-left:0px;
+	margin-top:10px;
+}
+#leftTree li{
+	margin:-1 0;
+}
+#leftTree1 li a{
+	display:block;
+	width:190px;
+	height:25px;
+	color:#007b00;
+	font-size:14px;
+	font-weight:600;
+	background:url(001.gif) no-repeat left top;
+	line-height:25px;
+	text-indent:40px;
+	text-decoration:none;
+}
+.kai{
+	display:block;
+	width:190px;
+	height:25px;
+	color:#007b00;
+	font-size:14px;
+	font-weight:600;
+	background:url(004.gif) no-repeat left top;
+	line-height:25px;
+	text-indent:40px;
+	text-decoration:none;
+}
+.he{
+	display:block;
+	width:190px;
+	height:25px;
+	color:#007b00;
+	font-size:14px;
+	font-weight:600;
+	background:url(001.gif) no-repeat left top;
+	line-height:25px;
+	text-indent:40px;
+	text-decoration:none;
+}
+#leftTree .son a{
+	display:block;
+	width:190px;
+	height:25px;
+	color:#404040;
+	font-size:14px;
+	font-weight:400;
+	background:url(003.gif) no-repeat left top;
+	line-height:25px;
+	text-indent:55px;
+	text-decoration:none;
+}
+#leftTree .son  a:hover {
+	background-color:#9AFF9A;
+	color:black;
+	background:url(002.gif) no-repeat left top;
+	text-decoration:underline;
+}
+
+#leftTree li .sons{
+	background:url(003.gif) no-repeat left top;
+	color:#404040;
+	font-weight:400;
+	text-indent:50px;
+}
+#toperson a{
+	display:block;
+	width:190px;
+	height:25px;
+	color:#007b00;
+	font-size:14px;
+	font-weight:600;
+	background:url(001.gif) no-repeat left top;
+	line-height:25px;
+	text-indent:40px;
+	text-decoration:none;
+}

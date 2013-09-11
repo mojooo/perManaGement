@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- - Middle tier application context definition for the image database. -->
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	<bean id="config" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<!-- 此属性从源码中查看 -->
+		<property name="locations">
+			<list>
+				<value>classpath:jdbc.properties</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- 数据源 -->
+	<bean name="dataSource" class=" org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${driverClassName}"></property>
+		<property name="url" value="${url}"></property>
+		<property name="username" value="${username}"></property>
+		<property name="password" value="${password}"></property>
+	</bean>
+
+
+	<!-- sessionFactory -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<!-- <property name="hibernateProperties"> <props> <prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop> </props> </property> <property 
+			name="mappingResources"> <list> <value>com/ly/entity/Student.hbm.xml</value> <value>com/ly/entity/Class.hbm.xml</value> </list> </property> -->
+		<property name="configLocation">
+			<value>classpath:hibernate.cfg.xml</value>
+		</property>
+	</bean>
+
+	<!-- 事务管理 -->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<tx:advice id="advice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="add*" propagation="REQUIRED" />
+			<tx:method name="dell*" propagation="REQUIRED" />
+			<tx:method name="update*" propagation="REQUIRED" />
+			<tx:method name="*" read-only="true" />
+		</tx:attributes>
+	</tx:advice>
+
+	<aop:config>
+		<aop:pointcut expression="execution(* com.dao.*.*(..))" id="aaa" />
+		<aop:advisor advice-ref="advice" pointcut-ref="aaa" />
+	</aop:config>
+
+
+	<!-- 基本Dao接口 -->
+	<bean id="IbaseDao" class="com.dao.baseDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<!-- 用户Dao接口 -->
+	<bean id="IuserDao" class="com.dao.userDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<!-- 基础Biz接口 -->
+	<bean id="IbaseBiz" class="com.biz.baseBizImpl">
+		<property name="baseDao" ref="IbaseDao"></property>
+	</bean>
+
+	<!-- 用户Biz接口 -->
+	<bean id="IuserBiz" class="com.biz.userBizImpl">
+		<property name="userDao" ref="IuserDao"></property>
+		<property name="baseDao" ref="IbaseDao"></property>
+	</bean>
+
+	<!-- 部门action -->
+	<bean id="departAction" class="com.action.departAction" scope="prototype">
+		<property name="baseBiz" ref="IbaseBiz"></property>
+	</bean>
+
+	<!-- 职员action -->
+	<bean id="empAction" class="com.action.empAction" scope="prototype">
+		<property name="baseBiz" ref="IbaseBiz"></property>
+		<property name="departBiz" ref="IbaseBiz"></property>
+	</bean>
+
+	<!-- 加班action -->
+	<bean id="extraworkAction" class="com.action.extraworkAction" scope="prototype">
+		<property name="baseBiz" ref="IbaseBiz"></property>
+		<property name="departBiz" ref="IbaseBiz"></property>
+	</bean>
+
+	<!-- 请假action -->
+	<bean id="holsAction" class="com.action.holsAction" scope="prototype">
+		<property name="baseBiz" ref="IbaseBiz"></property>
+		<property name="empBiz" ref="IbaseBiz"></property>
+		<property name="departBiz" ref="IbaseBiz"></property>
+	</bean>
+
+	<!-- 登陆action -->
+	<bean id="LoginAction" class="com.action.LoginAction" scope="prototype">
+		<property name="userBiz" ref="IuserBiz"></property>
+	</bean>
+
+	<!-- 薪资action -->
+	<bean id="salaryAction" class="com.action.salaryAction" scope="prototype">
+		<property name="baseBiz" ref="IbaseBiz"></property>
+		<property name="departBiz" ref="IbaseBiz"></property>
+	</bean>
+	<!-- 用户action -->
+	<bean id="userAction" class="com.action.userAction" scope="prototype">
+		<property name="userBiz" ref="IuserBiz"></property>
+	</bean>
+
+	<!-- 考勤action -->
+	<bean id="attendanceAction" class="com.action.attendanceAction" scope="prototype">
+		<property name="baseBiz" ref="IbaseBiz"></property>
+		<property name="departBiz" ref="IbaseBiz"></property>
+	</bean>
+
+
+</beans>

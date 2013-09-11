@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory name="">
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="show_sql">true</property>
+		<!-- <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property> <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/permanagement</property> 
+			<property name="hibernate.connection.username">root</property> <property name="hibernate.connection.password">toor</property> -->
+		<mapping resource="com/entity/Departmentinfo.hbm.xml" />
+		<mapping resource="com/entity/Employeeinfo.hbm.xml" />
+		<mapping resource="com/entity/Extrawork.hbm.xml" />
+		<mapping resource="com/entity/Holsinfo.hbm.xml" />
+		<mapping resource="com/entity/Salaryinfo.hbm.xml" />
+		<mapping resource="com/entity/Userinfo.hbm.xml" />
+		<mapping resource="com/entity/Attendanceinfo.hbm.xml" />
+	</session-factory>
+</hibernate-configuration>

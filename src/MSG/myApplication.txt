@@ -1,0 +1,8 @@
+login.title=登录页面
+system.name=阳光知信人事管理系统
+system.englishname=yangguangzhixin person management
+login.info=用户登录
+login.name=请输入用户名：
+login.pwd=请输入密码：
+login.yanzheng=请输入验证码：
+

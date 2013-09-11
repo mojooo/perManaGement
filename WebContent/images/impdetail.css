@@ -1,0 +1,38 @@
+#container1{
+	width:600px;height:500px;background-color:white;margin-top:50px;
+}
+#infohead{
+	background-color:#f2fdf2;color:#007b00;height:30px;line-height:30px;font-weight:600px;width:600px;font-size:20px;
+}
+#pic{
+	width:200px;
+	height:200px;
+	float:left;margin-botton:0px;
+}
+#pic img{
+	margin:0 auto;
+}
+#pic span{
+	height:20px;line-height:20px;color:#404040;font-size:14px;
+}
+#info{
+	width:390px;float:right;
+}
+#info table{
+	backgrond:black;width:390px;border:0px;cellpadding:0px; cellspacing:0px;
+}
+#info .evenrow{
+	background:#e3fcff;color:#404040;
+}
+#info .oddrow{
+	background:#f4f4f4;color:#404040;
+}
+#jianli fieldset{
+	border:1px solid #ccc;width:600px;text-align:left;height:250px;word-break:break-all;word-wrap:break-word;
+}
+#jianli fieldset p{
+	text-indent:2em;color:#404040;margin:0;padding:0 5;margin-top:5px;
+}
+#jianli legend{
+	color:#007b00;
+}

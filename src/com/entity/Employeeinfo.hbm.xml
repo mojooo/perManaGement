@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-8-23 15:06:51 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.entity.Employeeinfo" table="employeeinfo">
+        <id name="empId" type="string">
+            <column name="empId" length="10" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="departmentinfo" class="com.entity.Departmentinfo" fetch="select">
+            <column name="departId" length="4" not-null="true">
+            </column>
+        </many-to-one>
+        <property name="empName" type="string">
+            <column name="empName" length="50" not-null="true">
+            </column>
+        </property>
+        <property name="empSex" type="string">
+            <column name="empSex" length="2" not-null="true">
+            </column>
+        </property>
+        <property name="empBirth" type="date">
+            <column name="empBirth" length="0" not-null="true">
+            </column>
+        </property>
+        <property name="empEmail" type="string">
+            <column name="empEmail" length="50" not-null="true">
+            </column>
+        </property>
+        <property name="empRoll" type="string">
+            <column name="empRoll" length="50" not-null="true">
+            </column>
+        </property>
+        <property name="empSalary" type="big_decimal">
+            <column name="empSalary" precision="8" not-null="true">
+            </column>
+        </property>
+        <property name="empTel" type="string">
+            <column name="empTel" length="20" not-null="true">
+            </column>
+        </property>
+        <property name="empPic" type="string">
+            <column name="empPic" length="100">
+            </column>
+        </property>
+        <property name="empBio" type="string">
+            <column name="empBio" length="65535">
+            </column>
+        </property>
+        <property name="empState" type="java.lang.Boolean">
+            <column name="empState" precision="1" scale="0">
+            </column>
+        </property>
+        <set name="extraworks" table="extrawork" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="empId" length="10" not-null="true">
+                </column>
+            </key>
+            <one-to-many class="com.entity.Extrawork" />
+        </set>
+        <set name="attendanceinfos" table="attendanceinfo" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="empId" length="10" not-null="true">
+                </column>
+            </key>
+            <one-to-many class="com.entity.Attendanceinfo" />
+        </set>
+        <set name="salaryinfos" table="salaryinfo" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="empId" length="10" not-null="true">
+                </column>
+            </key>
+            <one-to-many class="com.entity.Salaryinfo" />
+        </set>
+        <set name="holsinfos" table="holsinfo" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="empId" length="10" not-null="true">
+                </column>
+            </key>
+            <one-to-many class="com.entity.Holsinfo" />
+        </set>
+        <one-to-one name="userinfo" class="com.entity.Userinfo"></one-to-one>
+    </class>
+</hibernate-mapping>

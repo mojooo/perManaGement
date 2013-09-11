@@ -1,0 +1,75 @@
+@charset "utf-8";
+ .headerClass{
+ 	height: 25px;text-align: center;color:#404040;background: #c7e9ad;font-size:14px;
+ }
+ .evenRow{
+ 	height: 23px;background:#e3fcff;text-align:center;font-size:14px;color:#404040
+ }
+
+ .oddRow{
+ 	height: 23px;background:#f4f4f4;text-align:center;font-size:14px;color:#404040
+ }
+ .selectedRow{
+ 	background:white;height: 23px;text-align:center;font-size:14px;
+ }
+ table a{
+ 	color:#007b00;text-decoration:none;
+ }
+ table a:hover{
+ 	color:red;text-decoration:underline;
+ }
+ table caption{
+ 	display:block;background:f2fdf2;color:#007b00;font-size:16px;
+ }
+ .gongye{
+ 	font-size:14px;color:#404040;
+ }
+ .yeinput{
+ 	width:20px;height:20px;
+ }
+ .queding{
+ 	height:20px;color:#007b00;font-weight:700px;background:#f2fdf2;
+ }
+ 
+ label{
+ 	font-size:14px;color:#404040;font-family:"宋体";
+ }
+ 
+ 
+#buttomop{
+	width:400px;font-size:14px;color:#404040;
+}
+#buttomop .info{
+	float:left;width:150px; margin-left:142px;
+}
+#buttomop .info span{
+	margin-right:20px;
+}
+#buttomop .pageop{
+	float:right;width:250px;
+}
+#buttomop .pageop .shangye{
+	margin-left:220px;position:absolute; margin-top:-17px;
+}
+#buttomop .pageop .xiaye{
+	margin-left:250px;position:absolute;margin-top:-17px;
+}
+#buttomop .pageop .tiaozhuan{
+	margin-left:305px;position:absolute;width:60px;margin-top:-16px;
+}
+#buttomop .pageop .yefield{
+	margin-left:370px;width:25px;height:16px;position:absolute;
+	margin-top:-16px;
+}
+#buttomop .pageop .ye{
+	margin-left:400px;margin-top:1px;position:absolute;margin-top:-16px;
+}
+#buttomop .pageop .queding{
+	margin-left:425px;position:absolute;font-size:13px;height:20px;
+	color:#007b00;background:#f2fdf2;height:18px;margin-top:-17px;
+}
+
+#buttomop .pageop .quedingover{
+	margin-left:425px;position:absolute;font-size:13px;height:20px;
+	color:red;background:#f2fdf2;height:18px;margin-top:-17px;
+}

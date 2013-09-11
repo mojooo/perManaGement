@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-8-23 15:06:51 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.entity.Userinfo" table="userinfo">
+        <id name="empId" type="string">
+            <column name="empId" length="10" />
+            <generator class="foreign">
+                <param name="property">employeeinfo</param>
+            </generator>
+        </id>
+        <one-to-one name="employeeinfo" class="com.entity.Employeeinfo" constrained="true"></one-to-one>
+        <property name="pwd" type="string">
+            <column name="pwd" length="10" not-null="true">
+            </column>
+        </property>
+        <property name="empRight" type="int">
+            <column name="empRight">
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

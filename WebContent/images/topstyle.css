@@ -1,0 +1,21 @@
+#container{
+	width:980px;margin:0 auto;text-align: left;
+}
+#mainHead{
+	float:left;width:980px;margin:0 0;height:80px;background:url(bgtop.png) no-repeat left top;
+}
+#mainHead h1{
+	font-size:45px;margin:0;text-align:center;height:80px;line-height:80px;letter-spacing:10px;
+}
+#simpleinfo{
+	float:left;width:980px;height:20px;background-color:#eeeeee;
+}
+#simpleinfo span{
+	margin-left:20px;color:#333333;line-height:20px;font-size:12px;
+}
+#simpleinfo a{
+	line-height:20px;font-size:12px;margin-left:450px;color:#007b00;
+}
+#simpleinfo a:hover{
+	line-height:20px;font-size:12px;margin-left:450px;color:red;
+}

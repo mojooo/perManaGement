@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-8-23 15:06:51 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.entity.Departmentinfo" table="departmentinfo">
+        <id name="departId" type="string">
+            <column name="departId" length="4" />
+            <generator class="assigned" />
+        </id>
+        <property name="departName" type="string">
+            <column name="departName" length="50">
+            </column>
+        </property>
+        <property name="departNum" type="java.lang.Integer">
+            <column name="departNum">
+            </column>
+        </property>
+        <property name="departDesc" type="string">
+            <column name="departDesc" length="65535">
+            </column>
+        </property>
+        <set name="employeeinfos" table="employeeinfo" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="departId" length="4" not-null="true">
+                </column>
+            </key>
+            <one-to-many class="com.entity.Employeeinfo" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,31 @@
+
+#maincontent fieldset{
+	width:500px;
+}
+#ftdiv{
+	width:500px;margin-left:100px;
+}
+#ftdiv .inputarea{
+	width:200px;
+}
+#ftdiv tr{
+	height:25px;
+}
+#ftdiv .tijiao{
+	margin-left:250px;width:70px;color:#007b00;height:25px;background:#f2fdf2;margin-top:2px;
+}
+#ftdiv .tijiaoover{
+	margin-left:250px;width:70px;color:#red;height:25px;background:#f2fdf2;margin-top:2px;font-size:15px;
+}
+#ftdiv .infile{
+	width:200px;height:20px;
+}
+#ftdiv legend{
+	color:#007b00;
+}
+#ftdiv td{
+	color:#404040;font-size:15px;
+}
+.fielderr{
+	color:#ff0000;font-size:13px;font-weight:400;
+}

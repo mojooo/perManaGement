@@ -1,0 +1,79 @@
+ .headerClass{
+ 	height: 25px;text-align: center;color:#404040;background: #c7e9ad;font-size:14px;
+ }
+ .evenRow{
+ 	height: 23px;background:#e3fcff;text-align:center;font-size:14px;color:#404040
+ }
+
+ .oddRow{
+ 	height: 23px;background:#f4f4f4;text-align:center;font-size:14px;color:#404040
+ }
+ .selectedRow{
+ 	background:white;height: 23px;text-align:center;font-size:14px;
+ }
+ #topop{
+ 	width:780px;height:25px;float:left;font-size:14px;margin-top:5px;
+ }
+
+#topop form{
+	font-size:14px;float:left;margin-top:-2px;
+ }
+ #topop label{
+ 	font-size:14px;color:#404040;
+ }
+#topop .paixu{
+	position:absolute;margin-left:200px;margin-top:0px;float:left;
+}
+#topop .xinzipai{
+	margin-left:40px;margin-right:30px;
+}
+#topop a{
+	color:green;text-decoration:none;
+}
+#topop a:hover{
+	color:red;
+}
+#buttomop{
+	width:600px;font-size:14px;margin-top:3px;color:#404040;height:18px;
+}
+#buttomop .info{
+	float:left;width:200px;
+}
+#buttomop .info span{
+	margin-right:20px;
+}
+#buttomop .pageop{
+	float:right;width:300px;
+}
+#buttomop .pageop .shangye{
+	margin-top:1px;margin-left:10px;position:absolute;
+}
+#buttomop .pageop .xiaye{
+	margin-top:1px;margin-left:60px;position:absolute;
+}
+#buttomop .pageop .tiaozhuan{
+	margin-top:1px;margin-left:150px;position:absolute;width:60px;
+}
+#buttomop .pageop .yefield{
+	margin-left:207px;width:25px;height:16px;margin-top:-2px;position:absolute;
+}
+#buttomop .pageop .ye{
+	margin-left:234px;margin-top:1px;position:absolute;
+}
+#buttomop .pageop .queding{
+	margin-left:250px;margin-top:-2px;position:absolute;font-size:13px;height:20px;
+	color:#007b00;background:#f2fdf2;height:18px;
+}
+#buttomop .pageop .quedingover{
+	margin-left:250px;margin-top:-2px;position:absolute;font-size:13px;height:20px;
+	color:red;background:#f2fdf2;height:18px;
+}
+#maincontent a{
+	text-decoration:none;color:#007b00;
+}
+#maincontent a:hover{
+	color:red;
+}
+#pagespan{
+	margin-left:-100px;margin-top:-2px;position:absolute;
+}
